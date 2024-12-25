@@ -19,7 +19,8 @@ int random() {
   return std::rand() % 51;
 }
 
-void Radomize(std::vector<std::vector<int>>& matrix) {
+template <typename T>
+void Radomize(std::vector<std::vector<T>>& matrix) {
   size_t count = matrix.size()^ 2;
   size_t k, l;
   for (size_t i = 0; i < count; ++i) {
@@ -29,7 +30,8 @@ void Radomize(std::vector<std::vector<int>>& matrix) {
   }
 }
 
-void PlusRavno(std::vector<std::vector<int>>& matrix1, std::vector<std::vector<int>>& matrix2) {
+template <typename T>
+void PlusRavno(std::vector<std::vector<T>>& matrix1, std::vector<std::vector<T>>& matrix2) {
   for (size_t i = 0; i < matrix1.size(); ++i) {
     for (size_t j = 0; j < matrix1[i].size(); ++j) {
       matrix1[i][j] += matrix2[i][j];
@@ -37,7 +39,8 @@ void PlusRavno(std::vector<std::vector<int>>& matrix1, std::vector<std::vector<i
   }
 }
 
-void MinusRavno(std::vector<std::vector<int>>& matrix1, std::vector<std::vector<int>>& matrix2) {
+template <typename T>
+void MinusRavno(std::vector<std::vector<T>>& matrix1, std::vector<std::vector<T>>& matrix2) {
   for (size_t i = 0; i < matrix1.size(); ++i) {
     for (size_t j = 0; j < matrix1[i].size(); ++j) {
       matrix1[i][j] -= matrix2[i][j];
@@ -45,7 +48,8 @@ void MinusRavno(std::vector<std::vector<int>>& matrix1, std::vector<std::vector<
   }
 }
 
-void UmnojRavno(std::vector<std::vector<int>>& matrix1, std::vector<std::vector<int>>& matrix2) {
+template <typename T>
+void UmnojRavno(std::vector<std::vector<T>>& matrix1, std::vector<std::vector<T>>& matrix2) {
   for (size_t i = 0; i < matrix1.size(); ++i) {
     for (size_t j = 0; j < matrix1[i].size(); ++j) {
       matrix1[i][j] *= matrix2[i][j];
@@ -53,7 +57,8 @@ void UmnojRavno(std::vector<std::vector<int>>& matrix1, std::vector<std::vector<
   }
 }
 
-void StepjRavno(std::vector<std::vector<int>>& matrix1, int st) {
+template <typename T>
+void StepjRavno(std::vector<std::vector<T>>& matrix1, int st) {
   std::vector<std::vector<int>> matrix2 = matrix1;
   for (size_t n = 0; n < st; ++n) {
     for (size_t i = 0; i < matrix1.size(); ++i) {
@@ -64,7 +69,8 @@ void StepjRavno(std::vector<std::vector<int>>& matrix1, int st) {
   }
 }
 
-void VectorTrans(std::vector<std::vector<int>>& matrix1) {
+template <typename T>
+void VectorTrans(std::vector<std::vector<T>>& matrix1) {
   std::vector<std::vector<int>> matrix(matrix1.size(), std::vector<int>(matrix1[0].size(), 0));
   for (size_t i = 0; i < matrix1.size(); ++i) {
     for (size_t j = 0; j < matrix1[i].size(); ++j) {
